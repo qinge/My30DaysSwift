@@ -25,7 +25,10 @@ func delay(_ time: TimeInterval, task: @escaping () -> ()) -> Task? {
         cancel in
         if let internalClosure = closure {
             if (cancel == false){
+                print("执行任务")
                 DispatchQueue.main.async(execute: internalClosure)
+            }else{
+                print("任务被取消")
             }
         }
         closure = nil
@@ -39,6 +42,8 @@ func delay(_ time: TimeInterval, task: @escaping () -> ()) -> Task? {
         if let delayedClosure = result {
             delayedClosure(false)
         }
+        
+        print("3s hou zhixing ")
     }
     
     return result

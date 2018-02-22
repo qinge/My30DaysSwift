@@ -56,7 +56,7 @@ class ViewController: UIViewController,UITableViewDataSource, UITableViewDelegat
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        let task = delay(5) {
+        let task = delay(3) {
             print("拨打110")
         }
         
